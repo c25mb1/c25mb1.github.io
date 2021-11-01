@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style type="text/css">
+		
+		body {
+			margin: 0px;
+			background-color: rgb(243,201,182);
+			background-image: url(confetti.gif);
+			align-content: left;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+	<center>
+
+	<script type="text/javascript">
+	
+		let ballonNumber = 1;
+		let ballonImage = "url(./Ballons/ballon.png)";
+		let size = "12.5vw";
+
+		document.addEventListener("click", ballonBob)
+		
+
+		function ballonBob() {
+
+			if (ballonNumber == 1) {
+
+			ballonImage = "url(./Ballons/ballonC.png)";
+
+			}
+
+			if (ballonNumber == 2) {
+
+				ballonImage = "url(./Ballons/ballonO.png)";
+
+			}
+
+			if (ballonNumber == 3) {
+
+				ballonImage = "url(./Ballons/ballonN.png)";
+
+			}
+
+			if (ballonNumber == 4) {
+
+				ballonImage = "url(./Ballons/ballonG.png)";
+
+			}
+
+			if (ballonNumber == 5) {
+
+				ballonImage = "url(./Ballons/ballonR.png)";
+
+			}
+
+			if (ballonNumber == 6) {
+
+				ballonImage = "url(./Ballons/ballonA.png)";
+
+			}
+
+			if (ballonNumber == 7) {
+
+				ballonImage = "url(./Ballons/ballonT.png)";
+
+			}
+
+			if (ballonNumber == 8) {
+
+				ballonImage = "url(./Ballons/ballonS.png)";
+
+			}
+
+			if (ballonNumber > 8) {
+
+				ballonImage = "";
+	
+			}
+
+			
+			ballonNumber = ballonNumber + 1;
+			let ballon = document.createElement("div")
+			document.body.appendChild(ballon);
+			ballon.classList.add("text");
+
+			var top = Math.round(Math.random() *750);
+
+			ballon.style.width = size;
+			ballon.style.height = size;
+			ballon.style.position ="relative";
+			ballon.style.top = "25vw";
+			ballon.style.display = "inline-block";
+
+			ballon.style.backgroundImage = ballonImage;
+			ballon.style.backgroundSize = "contain";
+
+			
+			console.log(ballonNumber)
+		}
+
+	</script>
+
+	</center>
+
+</body>
+</html>
