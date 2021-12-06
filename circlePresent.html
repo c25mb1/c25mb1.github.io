@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			max-width: 100vw;
+			height: 100vh;
+			background-color: #cce7ff;
+		}
+
+#click{
+	z-index: 2;
+	width: 20vw;
+	height: 4vh;
+	position: absolute;
+	background-color: #cce7ff;
+	top: 4vw;
+	left: .75%;
+	font-size: 1vw;
+	color: black;
+	text-align: center;
+}
+}
+
+	</style>
+</head>
+<body>
+
+</a>
+
+<script type="text/javascript">
+
+	let text = "";
+
+	function balloonBob (){
+
+
+	var red = Math.floor(Math.random()*255);
+	var green = Math.floor(Math.random()*255);
+	var blue = Math.floor(Math.random()*255);
+	var top = Math.floor(Math.random()*700)
+	var left = Math.round(Math.random()*1400)
+	var index = (Math.random()*100)
+
+	if (left >= 1 && left <= 100) {
+		text = "H";
+	}
+	if (left >= 101 && left <= 200) {
+		text = "A";
+	}
+	if (left >= 201 && left <= 300) {
+		 text = "P";
+	}
+	if (left >= 301 && left <= 400) {
+		 text = "P";
+	}
+	if (left >= 401 && left <= 500) {
+		 text = "Y";
+	}
+	if (left >= 501 && left <= 600) {
+		 text = "";
+	}
+	if (left >= 601 && left <= 700) {
+		 text = "H";
+	}
+	if (left >= 701 && left <= 800) {
+		 text = "O";
+	}
+	if (left >= 801 && left <= 900) {
+		 text = "L";
+	}
+	if (left >= 901 && left <= 1000) {
+		 text = "I";
+	}
+	if (left >= 1001 && left <= 1100) {
+		 text = "D";
+	}
+	if (left >= 1101 && left <= 1200) {
+		 text = "A";
+	}
+	if (left >= 1201 && left <= 1300) {
+		 text = "Y";
+	}
+	if (left >= 1301 && left <= 1400) {
+		 text = "S";
+	}
+
+	let balloon = document.createElement("div");
+	document.body.appendChild(balloon).textContent = text;
+
+	balloon.style.width = "50px";
+	balloon.style.height = "50px";
+	balloon.style.backgroundColor = "rgb("+ red + "," + green + "," + blue +")";
+	balloon.style.borderRadius = "50%";
+	balloon.style.position = "absolute";
+	balloon.style.display = "inline-block"
+	balloon.style.zIndex = index + 1
+	balloon.style.top = top+ "px";
+	balloon.style.left = left+ "px";
+	balloon.style.border = "5px solid black";
+	balloon.style.fontSize = "50px"
+	balloon.style.textAlign = "center";
+}
+// setInterval(balloonBob, 100);
+document.addEventListener("click", balloonBob);
+
+setInterval(balloonBob, 1);
+
+</script>
+</body>
+</html>

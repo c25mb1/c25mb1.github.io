@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	
+</head>
+<body>
+
+	<script type="text/javascript">
+		 
+
+		let time = Math.random()*2000;
+
+		setInterval(makeCovid, time);
+
+		
+		function makeCovid () {
+			let face = document.createElement("div")
+
+			document.body.appendChild(face);
+
+			face.style.backgroundImage = "url(sickface.png)";
+			face.style.backgroundSize = "contain";
+			face.style.height = "50px";
+			face.style.width = "50px";
+			// face.style.display = "inline-block"
+			face.style.position = 'absolute';
+			face.style.left = Math.random()*800 + "px"
+			face.style.top = Math.random()*800 + "px"
+			console.log(time);
+
+			function happyface(){ face.style.backgroundImage = "url(happyface.png)";}
+
+						
+
+			face.addEventListener("click", happyface)
+						
+
+			function deadface (){
+			face.style.backgroundImage = "url(deadface.png)";
+				face.removeEventListener("click", happyface) }
+
+			happyface setTimeout(deadface, 1000)
+
+			}
+
+
+
+
+
+			
+			
+
+
+	</script>
+
+</body>
+</html>
