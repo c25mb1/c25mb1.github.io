@@ -17,7 +17,10 @@
 		
 		function makeCovid () {
 			let face = document.createElement("div")
+<<<<<<< HEAD
 			let alive = true
+=======
+>>>>>>> df6a29ec9bcc1cf1e8386ee812d7d452b169b4ca
 
 			document.body.appendChild(face);
 
@@ -31,6 +34,7 @@
 			face.style.top = Math.random()*800 + "px"
 			console.log(time);
 
+<<<<<<< HEAD
 			function happyface(){ 
 			face.style.backgroundImage = "url(happyface.png)";
 			alive = false;
@@ -50,6 +54,22 @@
 			}
 			
 
+=======
+			function happyface(){ face.style.backgroundImage = "url(happyface.png)";}
+
+						
+
+			face.addEventListener("click", happyface)
+						
+
+			function deadface (){
+			face.style.backgroundImage = "url(deadface.png)";
+				face.removeEventListener("click", happyface) }
+
+			happyface setTimeout(deadface, 1000)
+
+			}
+>>>>>>> df6a29ec9bcc1cf1e8386ee812d7d452b169b4ca
 
 
 
