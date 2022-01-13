@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&display=swap" rel="stylesheet">
+
+
+<style type="text/css">		
+		
+		body {
+			margin: 0px;
+			background-color: #fedd9e;
+		}
+
+		.map {
+			width: 100%;
+			height: 1000px;
+			position: inline-block;
+		}
+
+		#Yemen {
+			background-image: url("mapYemen.png");
+		}
+		#Iran {
+			background-image: url("mapIran.png");
+		}
+		#USA {
+			background-image: url("mapUSA.png");
+		}
+		#Germany {
+			background-image: url("mapGermany.png");
+		}
+		#Austrailia {
+			background-image: url("mapAustrailia.png");
+		}
+		#India {
+			background-image: url("mapIndia.png");
+		}
+		#Cuba {
+			background-image: url("mapCuba.png");
+		}
+		#Turkey {
+			background-image: url("mapTurkey.png");
+		}
+		#IsrealPalestine {
+			background-image: url("mapPalestine.png");
+		}
+		#China {
+			background-image: url("mapChina.png");
+		}
+		#UnitedKingdom {
+			background-image: url("mapEngland.png");
+		}
+		#Russia {
+			background-image: url("mapRussia.png");
+		}
+
+		.map {
+			height: 50vw;
+			width: auto;
+			background-size: cover;
+			padding-bottom: 10px;
+			position: relative;
+		}
+
+
+</style>
+
+	
+
+</head>
+
+
+<body>
+
+		<div id="Yemen" class="map"></div>
+		<div id="Iran" class="map"></div>
+		<div id="USA" class="map"></div>
+		<div id="Germany" class="map"></div>
+		<div id="Austrailia" class="map"></div>
+		<div id="India" class="map"></div>
+		<div id="Cuba" class="map"></div>
+		<div id="Turkey" class="map"></div>
+		<div id="IsrealPalestine" class="map"></div>
+		<div id="China" class="map"></div>
+		<div id="UnitedKingdom" class="map"></div>
+		<div id="Russia" class="map"></div>
+
+		<script type="text/javascript">
+			
+			let ellie = [0.3415513694, 0.6329726694, 0.6982227556, 0.6268552583, 0.7000040389, 0.2701797306, 0.7949001389, 0.5355093639, 0.3687717556, 0.8570024722, 0.6188614944, 0.2803423556, 0.7193071722, 0.609932175, 0.6805237611, 0.6001665528, 0.6663279222, 0.8159868472, 0.7876382722, 0.7876382722, 0.8450346389, 0.6421079194];
+
+			function dotsYemen() {
+				let dot = document.createElement('div')
+				document.body.appendChild(dot);
+				dot.style.width = "5px";
+				dot.style.height = "5px"
+				dot.style.borderRadius = "40%"
+				dot.style.position = "absolute"
+				dot.style.backgroundColor = "black"
+				dot.style.zIndex = "10"
+				dot.style.top = ellie[0] * 100 / 2 + "vw";
+				dot.style.left = ellie[1] * 100 + "vw";
+
+			}
+
+			dotsYemen();
+
+		</script>
+
+
+</body>
+
+</html>
