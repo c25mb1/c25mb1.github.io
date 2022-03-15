@@ -1,83 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
 	
 </head>
 <body>
 
+		<button onClick="window.location.reload();">Reset</button>
+   		<p style="width:50px;">Deaths: </p><input id="deaths"></input>
+		<p style="position:inline-block;">Saved: </p><input id="saves"></input>
+
 	<script type="text/javascript">
 		 
+		let time = 400;
+		function rate () {
+			time = time - 0.01;
+		}
 
-		let time = Math.random()*2000;
-
+		setInterval(rate, 10);
 		setInterval(makeCovid, time);
+		let deaths = document.getElementById('deaths');
+		let saves = document.getElementById('saves');
+		let x = 0;
+		let y = 0;
+		let height = screen.availHeight - 250;
+		let weight = screen.availWidth - 325;
 
 		
 		function makeCovid () {
 			let face = document.createElement("div")
-<<<<<<< HEAD
-			let alive = true
-=======
->>>>>>> df6a29ec9bcc1cf1e8386ee812d7d452b169b4ca
-
+			let cure = false
 			document.body.appendChild(face);
 
 			face.style.backgroundImage = "url(sickface.png)";
 			face.style.backgroundSize = "contain";
-			face.style.height = "50px";
 			face.style.width = "50px";
+			face.style.height = "50px";
 			// face.style.display = "inline-block"
 			face.style.position = 'absolute';
-			face.style.left = Math.random()*800 + "px"
-			face.style.top = Math.random()*800 + "px"
-			console.log(time);
-
-<<<<<<< HEAD
+			face.style.left = Math.random()* weight + 157 + "px";
+			face.style.top = Math.random()* height + "px";
+			
 			function happyface(){ 
-			face.style.backgroundImage = "url(happyface.png)";
-			alive = false;
-			}
-		
-
-			face.addEventListener("click", happyface)		
-
-			function deadface (){
-			face.style.backgroundImage = "url(deadface.png)";
+				face.style.backgroundImage = "url(happyface.png)";
+				cure = true;
+				y++;
+				saves.value = y;
 				face.removeEventListener("click", happyface) 
 			}
-			
-			if (alive = true)
-			setTimeout(deadface, 5000)
+
+			function dying(){
+				if (cure == false){
+					face.style.backgroundImage = "url(deadface.png)";
+					face.removeEventListener("click", happyface) 
+					x++;
+					deaths.value = x;
+				}
 
 			}
+	
+			function die(){
+				if (cure == false) {
+					setInterval(dying, 5000);
+				}
+				else {
+				console.log("hi");
+				}
 			
+			}	
 
-=======
-			function happyface(){ face.style.backgroundImage = "url(happyface.png)";}
-
+			die();
+			face.addEventListener("click", happyface)		
 						
-
-			face.addEventListener("click", happyface)
-						
-
-			function deadface (){
-			face.style.backgroundImage = "url(deadface.png)";
-				face.removeEventListener("click", happyface) }
-
-			happyface setTimeout(deadface, 1000)
-
-			}
->>>>>>> df6a29ec9bcc1cf1e8386ee812d7d452b169b4ca
-
-
-
-
-
-			
-			
-
+		}
 
 	</script>
 

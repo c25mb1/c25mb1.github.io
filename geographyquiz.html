@@ -14,56 +14,55 @@
 			background-color: #fedd9e;
 		}
 
-		.map {
-			width: 100%;
-			height: 1000px;
-			position: inline-block;
-		}
 
 		#Yemen {
-			background-image: url("mapYemen.png");
+			background-image: url("map.png");
 		}
 		#Iran {
-			background-image: url("mapIran.png");
+			background-image: url("map.png");
 		}
 		#USA {
-			background-image: url("mapUSA.png");
+			background-image: url("map.png");
 		}
 		#Germany {
-			background-image: url("mapGermany.png");
+			background-image: url("map.png");
 		}
 		#Austrailia {
-			background-image: url("mapAustrailia.png");
+			background-image: url("map.png");
 		}
 		#India {
-			background-image: url("mapIndia.png");
+			background-image: url("map.png");
 		}
 		#Cuba {
-			background-image: url("mapCuba.png");
+			background-image: url("map.png");
 		}
 		#Turkey {
-			background-image: url("mapTurkey.png");
+			background-image: url("map.png");
 		}
-		#IsrealPalestine {
-			background-image: url("mapPalestine.png");
+		#Palestine {
+			background-image: url("map.png");
 		}
 		#China {
-			background-image: url("mapChina.png");
+			background-image: url("map.png");
 		}
-		#UnitedKingdom {
-			background-image: url("mapEngland.png");
+		#England {
+			background-image: url("map.png");
 		}
 		#Russia {
-			background-image: url("mapRussia.png");
+			background-image: url("map.png");
 		}
 
 		.map {
-			height: 50vw;
-			width: auto;
+			z-index: -10;
+			position: absolute
+			width: 100vw;
+			height: 50.08vw;
+/*			height: 50vw;
+			width: auto;*/
 			background-size: cover;
 			padding-bottom: 10px;
-			position: relative;
-		}
+/*			position: relative;
+*/		}
 
 
 </style>
@@ -74,7 +73,6 @@
 
 
 <body>
-
 		<div id="Yemen" class="map"></div>
 		<div id="Iran" class="map"></div>
 		<div id="USA" class="map"></div>
@@ -83,32 +81,116 @@
 		<div id="India" class="map"></div>
 		<div id="Cuba" class="map"></div>
 		<div id="Turkey" class="map"></div>
-		<div id="IsrealPalestine" class="map"></div>
+		<div id="Palestine" class="map"></div>
 		<div id="China" class="map"></div>
-		<div id="UnitedKingdom" class="map"></div>
+		<div id="England" class="map"></div>
 		<div id="Russia" class="map"></div>
 
 		<script type="text/javascript">
-			
-			let ellie = [0.3415513694, 0.6329726694, 0.6982227556, 0.6268552583, 0.7000040389, 0.2701797306, 0.7949001389, 0.5355093639, 0.3687717556, 0.8570024722, 0.6188614944, 0.2803423556, 0.7193071722, 0.609932175, 0.6805237611, 0.6001665528, 0.6663279222, 0.8159868472, 0.7876382722, 0.7876382722, 0.8450346389, 0.6421079194];
+		
+			let country = 0;
+			let clicks = 0;
+			let storage = [];
+			let length = window.screen.height;
 
-			function dotsYemen() {
-				let dot = document.createElement('div')
+
+			function printMousePos(event) {
+				clicks = clicks + 1;
+				let dot = document.createElement('div');
 				document.body.appendChild(dot);
-				dot.style.width = "5px";
-				dot.style.height = "5px"
-				dot.style.borderRadius = "40%"
-				dot.style.position = "absolute"
-				dot.style.backgroundColor = "black"
-				dot.style.zIndex = "10"
-				dot.style.top = ellie[0] * 100 / 2 + "vw";
-				dot.style.left = ellie[1] * 100 + "vw";
+				
+				dot.style.position = "absolute";
+				dot.style.width = "50px";
+				dot.style.height = "50px";
+				dot.style.backgroundColor = "black";
+				dot.style.zIndex = "10";
+				dot.style.left = event.screenX + "px";
+				dot.style.top = event.screenY + "px";
 
+			    console.log(event.screenY);
+			    console.log(event.screenX);
+			    console.log(clicks);
+			    storage.push(event.screenX);
+			    storage.push(event.screenY);
+				console.log(storage);
+
+				if (event.screenY <= length) {country = 1; awnser();}
+				if (event.screenY <= 2 * length) {country = 2; awnser();}
+				if (event.screenY <= 3 * length) {country = 3; awnser();}
+				if (event.screenY <= 4 * length) {country = 4; awnser();}
+				if (event.screenY <= 5 * length) {country = 5; awnser();}
+				if (event.screenY <= 6 * length) {country = 6; awnser();}
+				if (event.screenY <= 7 * length) {country = 7; awnser();}
+				if (event.screenY <= 8 * length) {country = 8; awnser();}
+				if (event.screenY <= 9 * length) {country = 9; awnser();}
+				if (event.screenY <= 10 * length) {country = 10; awnser();}
+				if (event.screenY <= 11 * length) {country = 11; awnser();}
+				if (event.screenY <= 12 * length) {country = 12; awnser();}
 			}
 
-			dotsYemen();
+			function awnser (){
+
+				if (country == 1){
+					document.getElementById('Yemen')
+					Yemen.style.backgroundImage = "url(mapYemen.png)";
+				}
+				if (country == 2){
+					document.getElementById('Iran')
+					Iran.style.backgroundImage = "url(mapIran.png)";
+				}
+				if (country == 3){
+					document.getElementById('USA')
+					USA.style.backgroundImage = "url(mapUSA.png)";
+				}
+				if (country == 4){
+					document.getElementById('Germany')
+					Germany.style.backgroundImage = "url(mapGermany.png)";
+				}
+				if (country == 5){
+					document.getElementById('Austrailia')
+					Austrailia.style.backgroundImage = "url(mapAustrailia.png)";
+				}
+				if (country == 6){
+					document.getElementById('India')
+					India.style.backgroundImage = "url(mapIndia.png)";
+				}
+				if (country == 7){
+					document.getElementById('Cuba')
+					Cuba.style.backgroundImage = "url(mapCuba.png)";
+				}
+				if (country == 8){
+					document.getElementById('Turkey')
+					Turkey.style.backgroundImage = "url(mapTurkey.png)";
+				}
+				if (country == 9){
+					document.getElementById('Palestine')
+					Palestine.style.backgroundImage = "url(mapPalestine.png)";
+				}
+				if (country == 10){
+					document.getElementById('China')
+					China.style.backgroundImage = "url(mapChina.png)";
+				}
+				if (country == 11){
+					document.getElementById('England')
+					England.style.backgroundImage = "url(mapEngland.png)";
+				}
+				if (country == 12){
+					document.getElementById('Russia')
+					Russia.style.backgroundImage = "url(mapRussia.png)";
+				}
+				else {
+
+				}
+			}
+			
+
+			document.addEventListener("click",printMousePos(event));
 
 		</script>
+
+		
+
+		
 
 
 </body>
