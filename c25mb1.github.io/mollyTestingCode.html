@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		document.addEventListener("click", function (event) {
+				let dot = document.createElement('div');
+				document.body.appendChild(dot);
+				dot.style.position = "absolute";
+				dot.style.width = "50px";
+				dot.style.height = "50px";
+				dot.style.backgroundColor = "black";
+				dot.style.zIndex = "10";
+				dot.style.left = event.clientX +"px";
+				dot.style.top = event.clientY + "px";
+
+				console.log(dot.style.left)
+
+
+			}
+
+
+)
+
+
+	</script>
+
+</body>
+</html>
