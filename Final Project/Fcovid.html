@@ -9,8 +9,12 @@
    		<p style="width:50px;">Deaths: </p><input id="deaths"></input>
 		<p style="position:inline-block;">Saved: </p><input id="saves"></input>
 
+		<button id="button">Wanna see what you will make?</button>
+
 	<script type="text/javascript">
 		 
+		let team = ["Molly.png", "Marcus.png", "Lucas.png", "Nelson.png", "Maxwell.png", "Ary.png", "Ben.png", "Drew.png"];
+
 		let time = 400;
 		function rate () {
 			time = time - 0.01;
@@ -31,10 +35,14 @@
 			let cure = false
 			document.body.appendChild(face);
 
-			face.style.backgroundImage = "url(sickface.png)";
+			let table = Math.floor(Math.random()*8);
+			console.log(table);
+
+			face.style.backgroundImage = "url(" + team[table] + ")";
 			face.style.backgroundSize = "contain";
 			face.style.width = "50px";
 			face.style.height = "50px";
+			face.style.backgroundRepeat = "no-repeat";
 			// face.style.display = "inline-block"
 			face.style.position = 'absolute';
 			face.style.left = Math.random()* weight + 157 + "px";
@@ -69,7 +77,16 @@
 			}	
 
 			die();
-			face.addEventListener("click", happyface)		
+			face.addEventListener("click", happyface)	
+
+			if (saves.value == 13) {
+				let button = document.getElementById('button')
+				button.addEventListener("click", 
+				function(){
+				window.location.replace("https://c25mb1.github.io/Final%20Project/englishproject.html")
+			})
+			};
+				
 						
 		}
 
