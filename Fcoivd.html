@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+		<button onClick="window.location.reload();">Reset</button>
+   		<p style="width:50px;">Deaths: </p><input id="deaths"></input>
+		<p style="position:inline-block;">Saved: </p><input id="saves"></input>
+
+		<button id="button">Wanna see what you will make?</button>
+
+	<script type="text/javascript">
+		 
+		let team = ["Molly.png", "Marcus.png", "Lucas.png", "Nelson.png", "Maxwell.png", "Ary.png", "Ben.png", "Drew.png"];
+
+		let time = 400;
+		function rate () {
+			time = time - 0.01;
+		}
+
+		setInterval(rate, 10);
+		setInterval(makeCovid, time);
+		let deaths = document.getElementById('deaths');
+		let saves = document.getElementById('saves');
+		let x = 0;
+		let y = 0;
+		let height = screen.availHeight - 250;
+		let weight = screen.availWidth - 325;
+
+		
+		function makeCovid () {
+			let face = document.createElement("div")
+			let cure = false
+			document.body.appendChild(face);
+
+			let table = Math.floor(Math.random()*8);
+			console.log(table);
+
+			face.style.backgroundImage = "url(" + team[table] + ")";
+			face.style.backgroundSize = "contain";
+			face.style.width = "50px";
+			face.style.height = "50px";
+			face.style.backgroundRepeat = "no-repeat";
+			// face.style.display = "inline-block"
+			face.style.position = 'absolute';
+			face.style.left = Math.random()* weight + 157 + "px";
+			face.style.top = Math.random()* height + "px";
+			
+			function happyface(){ 
+				face.style.backgroundImage = "url(happyface.png)";
+				cure = true;
+				y++;
+				saves.value = y;
+				face.removeEventListener("click", happyface) 
+			}
+
+			function dying(){
+				if (cure == false){
+					face.style.backgroundImage = "url(deadface.png)";
+					face.removeEventListener("click", happyface) 
+					x++;
+					deaths.value = x;
+				}
+
+			}
+	
+			function die(){
+				if (cure == false) {
+					setInterval(dying, 5000);
+				}
+				else {
+				console.log("hi");
+				}
+			
+			}	
+
+			die();
+			face.addEventListener("click", happyface)	
+
+			if (saves.value == 13) {
+				let button = document.getElementById('button')
+				button.addEventListener("click", 
+				function(){
+				window.location.replace("https://c25mb1.github.io/englishproject.html")
+			})
+			};
+				
+						
+		}
+
+	</script>
+
+</body>
+</html>

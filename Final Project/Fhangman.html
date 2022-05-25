@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style type="text/css">
+
+		body {
+			background-image: url("chalkboard.png.jpg");
+			padding: 0px;
+		}
+		
+		#person {
+			width: 437.5px;
+			height: 350px;
+			padding-bottom: 2vh;
+			border: 4px;
+			align-items: center;
+			margin-left: -100px;
+
+		}
+
+		#losing {
+			opacity: 0;
+
+		}
+
+		.blank {
+			width: 50px;
+			height: 60px;
+			display: inline-block;
+			border: 1px;
+			margin: 5px;
+			text-align: center;
+			font-size: 50px;
+			background: 1px;
+			border-bottom: 5px solid black;
+
+		}
+	
+
+	</style>
+
+</head>
+<body>
+
+	<center>
+
+		<h1>The Teacher:</h1>
+
+		<div id='losing'>
+			<b>You Lose!
+			Click on me to reset!</b>
+		</div>
+		
+		<div id='person'></div>
+
+
+		<div id='blank1' class='blank'></div>
+		<div id='blank2' class='blank'></div>
+		<div id='blank3' class='blank'></div>
+		<div id='blank4' class='blank'></div>
+		<div id='blank5' class='blank'></div>
+		
+		<button id='submit'>Submit</button>
+
+
+
+	<script type="text/javascript">
+		
+		let wordbank = ["molly"]
+
+		let wordnumber = 0;
+		let word = wordbank[wordnumber];
+		console.log(word)
+
+		let letters = word.split('')
+		console.log(letters)
+
+		let letter1 = letters[0];
+		console.log(letter1);
+		let letter2 = letters[1];
+		console.log(letter2);
+		let letter3 = letters[2];
+		console.log(letter3);
+		let letter4 = letters[3];
+		console.log(letter4);
+		let letter5 = letters[4];
+		console.log(letter5);
+
+		let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+		let number = -1;
+		function createAlphabet (){
+
+			let letter = document.createElement('div');
+			document.body.appendChild(letter);
+
+			number = number + 1;
+			letter.style.width = "75px"
+			letter.style.height = "75px"
+			letter.style.display = "inline-block"
+			letter.style.border = "1px"
+			letter.style.margin = "5px"
+			letter.style.fontSize = "50px"
+			letter.style.textAlign = "center"
+			letter.style.verticalAlign = "center"
+			letter.style.backgroundImage  = "url(keycap.png)"
+			letter.style.backgroundSize  = "cover"
+			letter.innerHTML = alphabet[number];
+			letter.style.id = "square" + alphabet[number];
+			letter.addEventListener("click", click);
+
+
+			function click (){
+
+			if (letter1  == letter.innerText) {
+				console.log(letter.innerText)
+				console.log("done1")
+				right1()
+			} else if (letter2  == letter.innerText) {
+				console.log(letter.innerText)
+				console.log("done2")
+				right2()
+			} else if (letter3  == letter.innerText) {
+				console.log(letter.innerText)
+				console.log("done3")
+				right3()
+				console.log("done4")
+				console.log(letter.innerText)
+				right4()
+			} else if (letter4  == letter.innerText) {
+				console.log("done4")
+				console.log(letter.innerText)
+				right4()
+			} else if (letter5  == letter.innerText) {
+				console.log(letter.innerText)
+				console.log("done5")
+				right5()
+
+			} else {
+				letter.innerHTML = ".";
+				wrong()
+			}
+			
+		}
+		}
+
+		let correct = 0;
+
+		function right1() {
+			let blank1 = document.getElementById('blank1');
+			blank1.innerHTML = letter1;
+			correct = correct + 1;
+			console.log(correct);
+
+		}
+
+		function right2() {
+			let blank2 = document.getElementById('blank2');
+			blank2.innerHTML = letter2;
+			correct = correct + 1;
+			console.log(correct);
+		}
+
+		function right3() {
+			let blank3 = document.getElementById('blank3');
+			blank3.innerHTML = letter3;
+			correct = correct + 2;
+			console.log(correct);
+		}
+
+		function right4() {
+			let blank4 = document.getElementById('blank4');
+			blank4.innerHTML = letter4;
+			correct = correct + 1;
+			console.log(correct);
+		}
+
+		function right5() {
+			let blank5 = document.getElementById('blank5');
+			blank5.innerHTML = letter5;
+			correct = correct + 1;
+			console.log(correct);
+		}
+
+		for (var i = 0; i < 26; i++) {
+			createAlphabet();
+		}
+
+		let image = document.getElementById('person')
+
+		let parts = ["url(hangman1.png)", "url(hangman2.png)", "url(hangman3.png)", "url(hangman4.png)", "url(hangman5.png)", "url(hangman6.png)", "url(hangman7.png)"]
+
+		let x = 0;
+		function wrong() {
+			x = x+1;
+			image.style.backgroundImage = parts[x]
+			if (x==7){
+				lose()}
+			}
+			
+		function lose (){
+			let person = document.getElementById('person');
+			person.style.width = "150vw";
+			person.style.backgroundColor = "black";
+			let losing = document.getElementById('losing');
+			losing.style.opacity = "1"	
+			losing.addEventListener("onclick", reset())
+			}
+
+		function reset() {
+			"setTimeout(reseting(){ window.location.reload();}, 5000);"
+			
+		}
+
+		if (correct == 5) {
+			window.location.replace("https://c25mb1.github.io/slides.html")
+		}
+
+		
+		submit.addEventListener("click", function(){window.location.replace("https://c25mb1.github.io/slides.html")})
+
+			
+	
+
+	</script>
+
+	</center>
+
+</body>
+</html>

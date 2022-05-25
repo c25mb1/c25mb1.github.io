@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<style type="text/css">
+		
+		
+
+		#box1 {
+			background-color: red;
+			text-align: center;
+			color: pink;
+			font-size: 3vw;
+			font-family: gillSans;
+			transition: 1s;
+		}
+
+		#box2 {
+			background-color: yellow;
+			text-align: center;
+			color: orange;
+			font-size: 2vw;
+			font-family: cursive;
+			transition: 1s;
+		}
+
+		#box3 {
+			background-color: blue;
+			text-align: center;
+			color: aqua;
+			font-size: 3.5vw;
+			font-family: appleChancery;
+			transition: 1s;
+		}
+
+		#box1:hover {
+			background-color: orange;
+		}
+
+		#box2:hover {
+			background-color: green;
+		}
+
+		#box3:hover {
+			background-color: purple;
+		}
+
+		.box {
+			width: 30vw;
+			height: 30vw;
+			margin: 1.25vw;
+			display: inline-block;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div id="box1" class="box">
+		<a href="https://www.webfx.com/web-design/random-color-picker/#BB0D1B"><h1>I'm Red</h1></a>
+	</div>
+	<div id="box2" class="box">
+		<a href="https://www.webfx.com/web-design/random-color-picker/#DEFE55"><h1>I'm Yellow</h1></a>
+	</div>
+	<div id="box3" class="box">
+		<a href="https://www.webfx.com/web-design/random-color-picker/#0918CE"><h1>I'm Blue</h1></a>
+	</div>
+
+<script type="text/javascript">
+	
+	let redbox = document.getElementById('box1');
+	function red() {
+		redbox.style.backgroundColor = "pink";
+	}
+	redbox.addEventListener("click", red);
+
+	const bluebox = document.getElementById('box3');
+	function blue() {
+		
+	for (let i = 0; i <= 100; i++) {
+		const clone = bluebox.cloneNode(true);
+		document.body.appendChild(clone);
+	}
+	}
+	bluebox.addEventListener("click", blue);
+
+	let yellowbox = document.getElementById('box2');
+	let music = new Audio("HappyBirthday.mp3")
+
+	function yellow(){
+		if (music.paused) {
+			music.play();}
+		else {
+			music.pause();
+		}		
+	}
+
+	yellowbox.addEventListener("click", yellow);
+
+
+	setInterval(function color() {
+		let r = (Math.random() * 255);
+		let g = (Math.random() * 255);
+		let b = (Math.random() * 255);
+		let boxes = document.getElementById('box2')
+		let RGB = "rgb(" + r + "," + g + "," + b + ")";
+		console.log(RGB);
+		boxes.style.backgroundColor = RGB;
+	}, 1000)
+
+
+</script>
+
+</body>
+</html>

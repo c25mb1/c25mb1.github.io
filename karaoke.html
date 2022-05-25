@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+	<title>KARAOKEEEEEE!WOWOWOWO!HAVE FUNNNNNNNNN!!!!!</title>
+
+	<style type="text/css">
+		
+		body {
+			background-color: navy;	
+			font-family: Quicksand;
+			line-height: 1.6;		
+		}
+
+		#button {
+			width: 100%;
+			font-family: Quicksand;
+			background-color: black;
+			color: white;
+		}
+
+		#lyric {
+			width: 100%;
+			height: auto;
+			display: inline-block;
+			white-space: nowrap;
+			margin-left: 90vw;
+			color: white;
+			font-size: 5vw;
+			transition: 0.25s;
+			top: 50px;
+
+		}
+
+
+	</style>
+</head>
+<body>
+<center>
+		<button id="button" onclick="run()">Click me to Play!</button>
+</center>
+
+	<div id="lyric">
+You are my fire ........................ The one ................ desire ........................ Believe ................ when I say ...................... I want it that way ................................. But we ................................. are two worlds ........ apart ................................ Can't reach to your heart ...................................... When you say ................ That I want it that way .................. Tell me why Ain't nothin' but a heartache ... Tell me why ... Ain't nothin' but a mistake . Tell me why . I never wanna hear you say ...... I want it that way ........................................ Am I ......................... your fire?............................. Your one ...................... desire ......................... Yes, I know ............................. it's too late ........................ But I want it that way ..................................... Tell me why . Ain't nothin' but a heartache . Tell me why.  Ain't nothin' but a mistake . Tell me why . I never wanna hear you say ......... I want it that way ..................................... Now I can see that we've fallen apart .... From the way that it used to be, .... yeah .............. No matter ... the distance ..... I want you to know ... That deep down inside of me ............................................. You are my fire ............... The one ........... desire ............................. You are (you are x3) ..............................................................................................................................................................  Ain't nothin' but a heartache ................ Ain't nothin' but a mistake (don't wanna hear you say) ... I never wanna hear you say ... (oh, yeah) I ....... want it that way .. Tell me why ....... Ain't nothin' but a heartache .. Tell me why .... Ain't nothing but a mistake .. Tell me why .... I never want to hear you say .... I want it that way Tell me why Ain't nothin' but a heartache .............. Ain't nothin' but a mistake .. Tell me why ......... I never want to hear you say ................ I want it that way' ................. Cause I want it that .. way</div>
+
+
+
+
+<script type="text/javascript">
+
+	let audio = new Audio("ThatWay.mp3")
+
+	let number = 300;
+
+	function run() {
+		audio.play();
+		let lyric = document.getElementById("lyric");	
+		number--;
+		lyric.style.marginLeft = number + "vw";
+		console.log("number");
+		
+		setTimeout(run, 50);
+	}
+
+	
+	
+
+	
+
+</script>
+</body>
+</html>

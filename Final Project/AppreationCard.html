@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'left middle middle middle middle right' 
+} 
+
+.right {
+  padding: 1vw;
+  height: 61.25vw; 
+  grid-area: right;
+}
+
+.left {
+  padding: 1vw;
+  height: 61.25vw; 
+  grid-area: left;
+}
+
+#middle {
+  grid-area: middle;
+  padding: 1vw;
+  height: 61.25vw; 
+  background-image: url("Evie1.png");
+  background-size: cover;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+
+  <div class="left" style="background-color:#aaa;"></div>
+  <div id="middle"></div>  
+  <div class="right" style="background-color:#ccc;"></div>
+
+</div>
+
+
+
+<script type="text/javascript">
+  
+
+let number = 0;
+
+  function image() {
+    let Evie = document.getElementById("middle");
+
+    number++;
+    Evie.style.backgroundImage = "url('Evie" + number + ".png')";
+
+    if (number > 5) {
+      number = 1;
+    }
+
+    setTimeout(image, 3000);
+}
+
+  image();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&display=swap" rel="stylesheet">
+
+
+<style type="text/css">		
+		
+		body {
+			margin: 0px;
+			background-color: #fedd9e;
+		}
+
+
+		#Yemen {
+			background-image: url("map.png");
+		}
+		#Iran {
+			background-image: url("map.png");
+		}
+		#USA {
+			background-image: url("map.png");
+		}
+		#Germany {
+			background-image: url("map.png");
+		}
+		#Austrailia {
+			background-image: url("map.png");
+		}
+		#India {
+			background-image: url("map.png");
+		}
+		#Cuba {
+			background-image: url("map.png");
+		}
+		#Turkey {
+			background-image: url("map.png");
+		}
+		#Palestine {
+			background-image: url("map.png");
+		}
+		#China {
+			background-image: url("map.png");
+		}
+		#England {
+			background-image: url("map.png");
+		}
+		#Russia {
+			background-image: url("map.png");
+		}
+
+		.map {
+			z-index: -10;
+			position: absolute
+			width: 100vw;
+			height: 50.08vw;
+/*			height: 50vw;
+			width: auto;*/
+			background-size: cover;
+			padding-bottom: 10px;
+/*			position: relative;
+*/		}
+
+
+</style>
+
+	
+
+</head>
+
+
+<body>
+		<div id="Yemen" class="map"></div>
+		<div id="Iran" class="map"></div>
+		<div id="USA" class="map"></div>
+		<div id="Germany" class="map"></div>
+		<div id="Austrailia" class="map"></div>
+		<div id="India" class="map"></div>
+		<div id="Cuba" class="map"></div>
+		<div id="Turkey" class="map"></div>
+		<div id="Palestine" class="map"></div>
+		<div id="China" class="map"></div>
+		<div id="England" class="map"></div>
+		<div id="Russia" class="map"></div>
+
+		<script type="text/javascript">
+		
+			let country = 0;
+			let clicks = 0;
+			let storage = [];
+			let length = window.screen.height;
+
+
+			function printMousePos(event) {
+				clicks = clicks + 1;
+				let dot = document.createElement('div');
+				document.body.appendChild(dot);
+				
+				dot.style.position = "absolute";
+				dot.style.width = "50px";
+				dot.style.height = "50px";
+				dot.style.backgroundColor = "black";
+				dot.style.zIndex = "10";
+				dot.style.left = event.screenX + "px";
+				dot.style.top = event.screenY + "px";
+
+			    console.log(event.screenY);
+			    console.log(event.screenX);
+			    console.log(clicks);
+			    storage.push(event.screenX);
+			    storage.push(event.screenY);
+				console.log(storage);
+
+				if (event.screenY <= length) {country = 1; awnser();}
+				if (event.screenY <= 2 * length) {country = 2; awnser();}
+				if (event.screenY <= 3 * length) {country = 3; awnser();}
+				if (event.screenY <= 4 * length) {country = 4; awnser();}
+				if (event.screenY <= 5 * length) {country = 5; awnser();}
+				if (event.screenY <= 6 * length) {country = 6; awnser();}
+				if (event.screenY <= 7 * length) {country = 7; awnser();}
+				if (event.screenY <= 8 * length) {country = 8; awnser();}
+				if (event.screenY <= 9 * length) {country = 9; awnser();}
+				if (event.screenY <= 10 * length) {country = 10; awnser();}
+				if (event.screenY <= 11 * length) {country = 11; awnser();}
+				if (event.screenY <= 12 * length) {country = 12; awnser();}
+			}
+
+			function awnser (){
+
+				if (country == 1){
+					document.getElementById('Yemen')
+					Yemen.style.backgroundImage = "url(mapYemen.png)";
+				}
+				if (country == 2){
+					document.getElementById('Iran')
+					Iran.style.backgroundImage = "url(mapIran.png)";
+				}
+				if (country == 3){
+					document.getElementById('USA')
+					USA.style.backgroundImage = "url(mapUSA.png)";
+				}
+				if (country == 4){
+					document.getElementById('Germany')
+					Germany.style.backgroundImage = "url(mapGermany.png)";
+				}
+				if (country == 5){
+					document.getElementById('Austrailia')
+					Austrailia.style.backgroundImage = "url(mapAustrailia.png)";
+				}
+				if (country == 6){
+					document.getElementById('India')
+					India.style.backgroundImage = "url(mapIndia.png)";
+				}
+				if (country == 7){
+					document.getElementById('Cuba')
+					Cuba.style.backgroundImage = "url(mapCuba.png)";
+				}
+				if (country == 8){
+					document.getElementById('Turkey')
+					Turkey.style.backgroundImage = "url(mapTurkey.png)";
+				}
+				if (country == 9){
+					document.getElementById('Palestine')
+					Palestine.style.backgroundImage = "url(mapPalestine.png)";
+				}
+				if (country == 10){
+					document.getElementById('China')
+					China.style.backgroundImage = "url(mapChina.png)";
+				}
+				if (country == 11){
+					document.getElementById('England')
+					England.style.backgroundImage = "url(mapEngland.png)";
+				}
+				if (country == 12){
+					document.getElementById('Russia')
+					Russia.style.backgroundImage = "url(mapRussia.png)";
+				}
+				else {
+
+				}
+			}
+			
+
+			document.addEventListener("click",printMousePos(event));
+
+		</script>
+
+		
+
+		
+
+
+</body>
+
+</html>
