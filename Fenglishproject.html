@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Marcus Bewtra Frankenstein Poetry</title>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		
+			body {
+			background-color: #1f4b75;
+			margin: 0;
+			font-family: Quicksand; 
+			line-height: 1.6;
+			color: #0a1c24;
+		}
+
+		h2 {
+			padding: 5px;
+			font-size: 3vw;
+		}
+
+		img {
+			display: block;
+			max-width: 100%;
+		}
+
+		.navItem {
+			font-weight: 2;
+			font-size: 4vw;
+			margin: 10px;
+		}
+
+
+		#sectionTitle {
+			margin-bottom: .25em;
+		}
+
+		#sectionSubtitle {
+			margin: 0;
+			background: #354096;
+		}
+
+		ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			margin-bottom: 5px;
+			display: inline;
+			overflow: hidden;
+			background-color: #354096;
+			font-size: 25px;
+			height: 100%;
+
+		}
+
+		.navItem {
+			background-color: #8abd9d;
+			color: #0a1c24;
+			transition-duration: 1s;
+			margin: 0;
+			padding: 0;
+			display: inline;
+			overflow: hidden;
+			height: 100%;
+			overflow: hidden;
+			margin-bottom: 5px;
+			padding-right: 15px;
+			padding-left: 15px;
+			vertical-align: middle;
+			font-size: 7vw;
+		    line-height: 1;
+		}
+
+		.navItem:hover {
+			background-color: #518388;
+			color: #0a1c24;
+			transition-duration: 1s;
+			margin: 0;
+			padding: 0;
+			display: inline;
+			overflow: hidden;
+			height: 100%;
+			overflow: hidden;
+			margin-bottom: 5px;
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+
+		.filler {
+			background-color: #8abd9d;
+		    color: #0a1c24;
+		    transition-duration: 1s;
+		    padding: 0;
+		    display: inline;
+		    overflow: hidden;
+		    height: 90%;
+		    overflow: hidden;
+		    padding-left: 15px;
+		    font-weight: 2;
+			font-size: 4vw;
+			margin-top: 1vw;
+			font-size: 7vw;
+
+		}
+
+		li{
+			float: right;
+		}
+
+		li a{
+			display: block;
+			padding: 8px;
+			color: #000;
+			text-align: center;
+			text-decoration: none;
+		}
+
+		header {
+			background-color: #8abd9d;
+			height: 10vw;
+			position: fixed;
+			width: 100%;
+			z-index: 10;
+		}
+
+		.dropdown {
+ 			position: absolute;
+  			display: inline-block;
+  			left: 75%;
+  			top: -5%;
+  			transition-duration: 1s;
+
+
+		}
+
+		.dropdown-content {
+			position: relative;
+			display: none;
+  			width: 30vw;
+  			height: 5vw;
+  			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ 			z-index: 1;
+ 			font-size: 2vw;
+ 			
+ 		}
+
+ 		.dropdown-content a {
+  			color: black;
+  			padding-top: 12px;
+  			padding-left: 0.1vw;
+  			text-decoration: none;
+  			display: block;
+  			background-color: #8abd9d;
+		}
+
+
+		.dropbtn {
+ 			background-color: #8abd9d;
+   			border: none;
+   			height: 10vw;
+   			font-size: 7vw;
+   			font-family: Quicksand;
+   			left: 82.5%;
+   			float: left;
+
+		}
+
+		.dropdown-content a:hover {background-color: #ddd;}
+		.dropdown:hover .dropdown-content {display: block;}
+
+
+
+		.grid-container{
+			display: grid;
+			grid-template-columns: 10vw 18vw 18vw 18vw 18vw 10vw;
+			grid-template-rows: 6vw 18vw 18vw 18vw 18vw 18vw 18vw;
+			background-color: #1f4b75;
+			padding: 10px;
+			width: 100%;
+			grid-gap: 2vw;
+			top: 10vw;
+
+		}
+
+		grid-item {
+			display: inline-grid;
+			background-color: #1f4b75;
+			border: 1px solid black;
+			padding: 10px;
+			text-align: center;
+		}
+		
+
+		#sectionImage {
+			grid-column-start: 2;
+			grid-column-end: 4;
+			grid-row-start: 2;
+			grid-row-end: 4;
+			align-items: center;
+			z-index: 9;
+		}
+
+		#sectionTitle {
+			grid-column-start: 4;
+			grid-column-end: 6;
+			grid-row-start: 2;
+			grid-row-end: 4;
+			font-size: 3vw;
+		}
+
+		#sectionSubtitle {
+			background-color: rgb(63, 120, 126);
+			position: absolute;
+			top: 50vw;
+			width: 48%;
+			height: 10vw;
+			vertical-align: middle;
+			align-items: center;
+			left: 49vw;
+			padding: 10px;
+			font-size: 20px;
+			overflow: hidden;
+		}
+
+		hr {
+			position: absolute;
+			top: 65vw;
+			width: 100%;
+			background-color: #518388;
+			background-color: 
+		}
+
+		#sectionAbout {
+			grid-column-start: 2;
+			grid-column-end: 6;
+			grid-row-start: 5;
+			grid-row-end: 6;
+			background-color: #0a1c24;
+			border-radius: 25px;
+			height: 100%;
+			display: inline-block;
+		}
+
+		#About { 
+			background-color: #8abd9d;
+			font-size: 2.5vw;
+			border-radius: 25px;
+			padding: 5px;
+			margin: 2vw;
+			width: 65%;
+			height: 11vw;
+			text-align: center;
+			align-items: middle;
+			vertical-align: middle;
+			display: inline-block;
+		}
+
+		.button {
+			display: inline-block;
+			position: relative;
+			font-size: 4vw;
+			border-radius: 10px;
+			padding: 5px;
+			margin: 2vw;
+			width: 20%;
+			height: 11vw;
+			text-align: center;
+			align-items: middle;
+			vertical-align: middle;
+			font-size: 3vw;
+			color: #518388;
+			background-color: #0a1c24;
+			border: 1vw solid;
+			transition-duration: 1s;
+		}
+
+		.button:hover {
+			background-color: #518388;
+			color: #0a1c24;
+			border: 1vw solid;
+			border-radius: 30px;
+		}
+
+		#example1 {
+			grid-column-start: 2;
+			grid-column-end: 3;
+			grid-row-start: 6;
+			grid-row-end: 7;
+
+		}
+
+		#example2 {
+			grid-column-start: 3;
+			grid-column-end: 4;
+			grid-row-start: 6;
+			grid-row-end: 7;
+		}
+		#example3 {
+			grid-column-start: 4;
+			grid-column-end: 5;
+			grid-row-start: 6;
+			grid-row-end: 7;
+		}
+
+		#example4 {
+			grid-column-start: 5;
+			grid-column-end: 6;
+			grid-row-start: 6;
+			grid-row-end: 7;
+		}
+
+		#example5 {
+			grid-column-start: 2;
+			grid-column-end: 3;
+			grid-row-start: 7;
+			grid-row-end: 8;
+		}
+
+		#example6 {
+			grid-column-start: 3;
+			grid-column-end: 4;
+			grid-row-start: 7;
+			grid-row-end: 8;
+		}
+
+		#example7 {
+			grid-column-start: 4;
+			grid-column-end: 5;
+			grid-row-start: 7;
+			grid-row-end: 8;
+		}
+
+		#example8 {
+			grid-column-start: 5;
+			grid-column-end: 6;
+			grid-row-start: 7;
+			grid-row-end: 8;
+		}
+
+		.show {
+			width: 100%;
+			height: 100%;
+			border-radius: 5vw;
+			background-image: linear-gradient(#8abd9d, #518388);
+			border: 1vw solid;
+			transition-duration: 1s;
+			color: black;
+			font-size: 3vw;
+		}
+
+		.show:hover {
+			color: black;
+			border: 1vw solid;
+			border-radius: 2vw;
+			transition: 1s;
+		}
+
+
+	</style>
+
+
+
+</head>
+<body>
+	<header>
+		<ul>
+			
+			<li class="filler">Poems</li>
+			<li class="navItem"><a href="englishprojectabout.html" >About</a></li>
+			<li class="navItem"><a href="englishproject.html" >Home</a></li>
+
+		</ul>
+
+		<div class="dropdown">
+				<div class="dropdown-content">
+				<a href="englishprojectparentalvalidation.html">Parentel Validation</a>
+				<a href="englishprojectrealmen.html">Real Men</a>
+				<a href="englishprojectthemeinthemirror.html">The Me in the Mirror</a>
+				<a href="englishprojectmymonsterinside.html">My Monster Inside</a>
+				<a href="englishprojectdancingontheedgeofacliff.html">Edge of a Cliff</a>
+				<a href="englishprojecttheweightofme.html">The Weight of Me</a>
+				<a href="englishprojectyoumycreator.html">You, my Creator</a>
+				<a href="englishprojectcollectionofhaikyus.html">Collection of Haikyus</a>
+			</div>
+			<li class="navItem"><button class=dropbtn>Poems</buttton></li>
+			</div>
+	</header>
+
+
+
+	<section id="home">
+		 
+		<div class="grid-container">
+			<div class="grid-item" id="sectionImage">
+				 <img src="Frankenstein.jpeg" class="intro"></img>
+			</div>
+
+			<div class="grid-item" id="sectionTitle">
+				<h1  class="intro"> Validation, A Series of Poems based on Mary Shelly's, Frankenstein</h1>
+			</div>
+
+			<div class="grid-item" id="sectionAbout">
+				<div id="About">Why poetry? Why a website? What does Frankenstein have to do with this? Find Out More!</div>
+				<button class="button"><a href="englishprojectabout.html">Click here!</a></button>
+			</div>
+			<div class="grid-item" id="example1">
+				<button class="show"><a href="englishprojectparentalvalidation.html">Parental Validation</a></button>
+			</div>
+			<div class="grid-item" id="example2">
+				<button class="show"><a href="englishprojectrealmen.html">Real Men</a></button>
+			</div>
+			<div class="grid-item" id="example3">
+				<button class="show"><a href="englishprojectthemeinthemirror.html">The Me in the Mirror</a></button>
+			</div>
+			<div class="grid-item" id="example4">
+				<button class="show"><a href="englishprojectmymonsterinside.html">My Monster Inside</a></button>
+			</div>
+			<div class="grid-item" id="example5">
+				<button class="show"><a href="englishprojectdancingontheedgeofacliff.html">Edge of a Cliff</a></button>
+			</div>
+			<div class="grid-item" id="example6">
+				<button class="show"><a href="englishprojecttheweightofme.html">The Weight of Me</a></button>
+			</div>
+			<div class="grid-item" id="example7">
+				<button class="show"><a href="englishprojectyoumycreator.html">You, my Creator</a></button>
+			</div>
+			<div class="grid-item" id="example8">
+				<button class="show"><a href="englishprojectcollectionofhaikyus.html">Collection of Haikus</a></button>
+			</div>
+			
+		</div>
+
+			<div id="sectionSubtitle" class="intro"> <h2 >.    By Marcus Bewtra</h2></div>
+		</div>
+
+	</section>
+
+	<hr>
+
+
+</body>
+</html>
+
+
+<!-- #518388 - lake
+#0a1c24 - text
+#8abd9d - hand
+#1f4b75 - sky -->
